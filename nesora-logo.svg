@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+  <title id="title">NESORA Air Conditioning</title>
+  <desc id="desc">NESORA logo with a flowing air mark</desc>
+  <defs>
+    <linearGradient id="wave" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1e9bd7"/>
+      <stop offset="1" stop-color="#071f4b"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(123 25) scale(1.45)">
+    <path d="M8 48c18-23 39-31 65-25l42 10c26 6 45-2 57-24-6 33-31 52-61 47L71 48c-25-5-43 3-63 22 0-8 0-15 0-22Z" fill="#0a2859"/>
+    <path d="M18 78c18-22 39-30 64-24l43 11c24 6 43-2 56-24-6 32-31 50-60 45L82 75c-25-5-45 3-64 22Z" fill="url(#wave)"/>
+    <path d="M35 99c16-17 34-23 55-19l33 7c21 4 38-3 50-19-5 25-27 39-51 35l-35-7c-20-4-36 2-52 16Z" fill="#9ab5cf"/>
+    <path d="M54 18h25v42c0 8 3 12 9 15l-20-5c-9-3-14-10-14-20Z" fill="#0a2859"/>
+  </g>
+  <text x="350" y="435" text-anchor="middle" fill="#0a2859" font-family="Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="14">NESORA</text>
+  <path d="M125 470h90M485 470h90" stroke="#0a2859" stroke-width="2"/>
+  <text x="350" y="480" text-anchor="middle" fill="#368bc1" font-family="Arial, sans-serif" font-size="24" letter-spacing="7">AIR CONDITIONING</text>
+  <text x="350" y="525" text-anchor="middle" fill="#0a2859" font-family="Arial, sans-serif" font-size="19" letter-spacing="6">INSTALLATION  |  MAINTENANCE</text>
+  <text x="350" y="580" text-anchor="middle" fill="#368bc1" font-family="Arial, sans-serif" font-size="17" letter-spacing="5">COMFORT. QUALITY. RELIABILITY.</text>
+</svg>
