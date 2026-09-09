@@ -1,0 +1,40 @@
+{
+  "requests": [
+    {
+      "id": "CF-3747",
+      "service": "التكييفات المركزية",
+      "consent": true,
+      "name": "لفقاقفا",
+      "phone": "84357934875893",
+      "latitude": 30.149043121449218,
+      "longitude": 31.313639822861436,
+      "located": true,
+      "governorate": "43545",
+      "area": "اقافقا",
+      "address": "افاقفاق",
+      "acType": "دولابي",
+      "brand": "قفافقا",
+      "time": "09:09",
+      "date": "34333-03-04",
+      "problem": "لقفقفا",
+      "hasImage": false,
+      "status": "جديد",
+      "createdAt": "2026-09-08T22:24:29.604Z"
+    },
+    {
+      "id": "CF-3969",
+      "service": "????? ???????",
+      "name": "???? ????",
+      "whatsapp": "01000000000",
+      "governorate": "???????",
+      "area": "????? ???",
+      "consent": true,
+      "phone": "01000000000",
+      "address": "???? ?????? 1",
+      "hasImage": false,
+      "status": "جديد",
+      "createdAt": "2026-09-08T22:10:04.379Z"
+    }
+  ],
+  "technicians": []
+}

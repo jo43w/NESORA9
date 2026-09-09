@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071a2e" />
+    <meta name="description" content="NESORA Air Conditioning, Installation & Maintenance لصيانة وتركيب وتنظيف وإصلاح التكييفات في مصر. فنيين موثوقين وخدمة سريعة." />
+    <meta property="og:title" content="NESORA | Air Conditioning, Installation & Maintenance" />
+    <meta property="og:description" content="اطلب فني تكييف معتمد في دقائق." />
+    <title>NESORA | Air Conditioning, Installation & Maintenance</title>
+    <style>
+      .file-launch-message{display:none;min-height:100vh;place-items:center;padding:24px;background:#071a2e;color:#fff;font-family:Arial,sans-serif;text-align:center}.file-launch-message div{max-width:520px}.file-launch-message h1{color:#2bd0e6}.file-launch-message p{line-height:1.8;color:#c4d5e2}.file-launch-message code{display:inline-block;margin-top:10px;padding:12px 16px;background:#0d304d;color:#fff;border-radius:6px}
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="file-launch-message" class="file-launch-message"><div><h1>NESORA</h1><p>الموقع يحتاج إلى تشغيل خادم التطوير. اضغط مرتين على ملف <strong>run-site.bat</strong> أو شغّل الأمر التالي من Terminal:</p><code>npm run dev</code></div></div>
+    <script>
+      if (location.protocol === 'file:') {
+        fetch('http://localhost:5173', { mode: 'no-cors' }).then(function () {
+          location.replace('http://localhost:5173');
+        }).catch(function () {
+          document.getElementById('file-launch-message').style.display = 'grid';
+        });
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
