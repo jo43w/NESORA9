@@ -1,29 +1,257 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#071a2e" />
-    <meta name="description" content="NESORA Air Conditioning, Installation & Maintenance لصيانة وتركيب وتنظيف وإصلاح التكييفات في مصر. فنيين موثوقين وخدمة سريعة." />
-    <meta property="og:title" content="NESORA | Air Conditioning, Installation & Maintenance" />
-    <meta property="og:description" content="اطلب فني تكييف معتمد في دقائق." />
-    <title>NESORA | Air Conditioning, Installation & Maintenance</title>
-    <style>
-      .file-launch-message{display:none;min-height:100vh;place-items:center;padding:24px;background:#071a2e;color:#fff;font-family:Arial,sans-serif;text-align:center}.file-launch-message div{max-width:520px}.file-launch-message h1{color:#2bd0e6}.file-launch-message p{line-height:1.8;color:#c4d5e2}.file-launch-message code{display:inline-block;margin-top:10px;padding:12px 16px;background:#0d304d;color:#fff;border-radius:6px}
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <div id="file-launch-message" class="file-launch-message"><div><h1>NESORA</h1><p>الموقع يحتاج إلى تشغيل خادم التطوير. اضغط مرتين على ملف <strong>run-site.bat</strong> أو شغّل الأمر التالي من Terminal:</p><code>npm run dev</code></div></div>
-    <script>
-      if (location.protocol === 'file:') {
-        fetch('http://localhost:5173', { mode: 'no-cors' }).then(function () {
-          location.replace('http://localhost:5173');
-        }).catch(function () {
-          document.getElementById('file-launch-message').style.display = 'grid';
-        });
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NESORA لخدمات صيانة وتركيب وتنظيف التكييفات" />
+  <title>NESORA | خدمة تكييف احترافية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @media (max-width: 800px) {
+      .desktop-nav.mobile-open {
+        display: flex;
+        position: absolute;
+        top: 62px;
+        right: 18px;
+        left: 18px;
+        z-index: 20;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 8px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: 0 18px 36px rgba(20, 61, 82, .16);
       }
-    </script>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+      .desktop-nav.mobile-open a {
+        padding: 11px 12px;
+        border-radius: 9px;
+      }
+
+      .desktop-nav.mobile-open a:hover,
+      .desktop-nav.mobile-open a.active {
+        background: var(--aqua);
+      }
+
+      .hero-image-wrap {
+        inset: 0;
+        border-radius: 26px;
+        background: var(--navy);
+      }
+
+      .hero-image-wrap img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    :root {
+      --navy: #061b2e;
+      --navy-2: #092943;
+      --blue: #009ff0;
+      --sky: #dff5ff;
+      --aqua: #0d3857;
+      --ink: #eaf7ff;
+      --muted: #94adbd;
+      --line: rgba(145, 194, 220, .18);
+      --white: #fff;
+      --shadow: 0 20px 60px rgba(0, 12, 25, .28);
+    }
+
+    body { background: #f4f9fc; color: var(--ink); }
+    .topbar { max-width: none; padding: 0 max(28px, calc((100% - 1240px) / 2)); background: var(--navy); }
+    .brand, .brand-mark { color: #fff; }
+    .brand-mark { background: var(--blue); }
+    .desktop-nav a, .phone-link { color: #a8bfce; }
+    .desktop-nav a:hover, .desktop-nav a.active, .phone-link b { color: #fff; }
+    .button-dark { background: #0d82ca; }
+    .button-ghost { border-color: rgba(145, 194, 220, .3); color: #fff; }
+    .hero { max-width: none; padding-left: max(28px, calc((100% - 1240px) / 2)); padding-right: max(28px, calc((100% - 1240px) / 2)); background: var(--navy); }
+    .hero-copy { color: #fff; }
+    .hero h1 { font-size: clamp(36px, 4.7vw, 66px); }
+    .hero-lead, .hero-trust small { color: #a8bfce; }
+    .hero-image-wrap { border-radius: 16px; box-shadow: 0 24px 50px rgba(0, 0, 0, .32); }
+    .image-overlay { background: linear-gradient(135deg, rgba(3, 24, 40, .08), rgba(3, 24, 40, .45)); }
+    .floating-card { background: rgba(6, 27, 46, .92); border: 1px solid rgba(145, 194, 220, .22); color: #fff; }
+    .stats-strip { background: #0a2a44; color: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .stats-strip strong, .stats-strip span { color: #fff; }
+    .services-section { max-width: none; background: var(--navy); color: #fff; }
+    .section-heading h2, .why-copy h2 { color: #fff; }
+    .section-kicker, .text-link { color: #35baff; }
+    .service-card { background: #092943; border: 1px solid rgba(145, 194, 220, .16); box-shadow: none; color: #fff; }
+    .service-card h3, .service-card p, .service-card small, .service-card a { color: #fff; }
+    .service-icon { background: rgba(0, 159, 240, .15); color: #35baff; }
+    .process-section { background: #f4f9fc; color: var(--navy); }
+    .light-heading h2, .process-section .section-heading p { color: var(--navy); }
+    .step { border-color: #cfe0e8; }
+    .step b { color: var(--navy); }
+    .step small { color: #6f8998; }
+    .step.active { background: #e2f5ff; border-color: #5cc8f5; }
+    .why-section { max-width: none; background: #f4f9fc; }
+    .why-copy { color: var(--navy); }
+    .why-copy h2 { color: var(--navy); }
+    .why-copy p, .benefit-grid small { color: #6f8998; }
+    .reviews-section { background: var(--navy); color: #fff; }
+    .review-card { background: #092943; border-color: rgba(145, 194, 220, .16); color: #fff; }
+    .review-card blockquote, .review-card small { color: #a8bfce; }
+    .carousel-controls button { background: #0d3857; color: #fff; }
+    .cta-band { max-width: none; background: linear-gradient(110deg, #0879bd, #00aaf0); color: #fff; }
+    .cta-band .section-kicker, .cta-band p { color: #dff5ff; }
+    .cta-band .button-primary { background: var(--navy); color: #fff; }
+    .footer { background: #041522; color: #fff; }
+    .footer p, .footer a, .footer span { color: #94adbd; }
+    .footer h4, .footer .brand { color: #fff; }
+    .footer .brand-mark { background: var(--blue); color: #fff; }
+    .footer-bottom { border-color: rgba(145, 194, 220, .16); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-image-wrap {
+        animation: heroFloat 7s ease-in-out infinite;
+      }
+
+      .card-status {
+        animation: cardDrift 4.8s ease-in-out infinite;
+      }
+
+      .card-rating {
+        animation: cardDrift 5.8s ease-in-out infinite reverse;
+      }
+
+      .pulse-dot {
+        animation: pulseDot 2s ease-out infinite;
+      }
+
+      .floating-whatsapp {
+        animation: whatsappPulse 2.8s ease-in-out infinite;
+      }
+
+      .service-card {
+        animation: cardReveal .7s both;
+      }
+
+      .service-card:nth-child(2) { animation-delay: .08s; }
+      .service-card:nth-child(3) { animation-delay: .16s; }
+      .service-card:nth-child(4) { animation-delay: .24s; }
+      .service-card:nth-child(5) { animation-delay: .32s; }
+      .service-card:nth-child(6) { animation-delay: .4s; }
+
+      .step {
+        animation: lineReveal .7s both;
+      }
+
+      .step:nth-child(2) { animation-delay: .12s; }
+      .step:nth-child(3) { animation-delay: .24s; }
+      .step:nth-child(4) { animation-delay: .36s; }
+
+      .experience-badge {
+        animation: badgeFloat 5s ease-in-out infinite;
+      }
+
+      @keyframes heroFloat {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(.4deg); }
+      }
+
+      @keyframes cardDrift {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-9px); }
+      }
+
+      @keyframes pulseDot {
+        0%, 100% { box-shadow: 0 0 0 6px rgba(242, 119, 98, .13); }
+        50% { box-shadow: 0 0 0 11px rgba(242, 119, 98, 0); }
+      }
+
+      @keyframes whatsappPulse {
+        0%, 100% { box-shadow: 0 8px 25px rgba(20, 145, 93, .3); }
+        50% { box-shadow: 0 8px 25px rgba(20, 145, 93, .3), 0 0 0 9px rgba(32, 200, 120, .12); }
+      }
+
+      @keyframes cardReveal {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes lineReveal {
+        from { opacity: 0; transform: translateX(16px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes badgeFloat {
+        0%, 100% { transform: translateY(0) rotate(-4deg); }
+        50% { transform: translateY(-7px) rotate(3deg); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" data-route="home" aria-label="NESORA الرئيسية"><span class="brand-mark">N</span><span>NESORA</span></a>
+      <nav class="desktop-nav" id="desktopNav" aria-label="التنقل الرئيسي">
+        <a href="#home" data-route="home">الرئيسية</a>
+        <a href="#services" data-route="home">خدماتنا</a>
+        <a href="#process" data-route="home">كيف نعمل</a>
+        <a href="#reviews" data-route="home">آراء العملاء</a>
+      </nav>
+      <div class="top-actions">
+        <a class="phone-link" href="tel:01225775453"><span>اتصل بنا</span><b>012 2577 5453</b></a>
+        <a class="button button-dark button-small" href="#request" data-route="request">اطلب فني الآن <span>↗</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+      </div>
+    </header>
+
+    <main id="app">
+      <section class="page home-page" data-page="home">
+        <section class="hero section-pad">
+          <div class="hero-copy reveal">
+            <div class="eyebrow"><span class="pulse-dot"></span> خدمة موثوقة في كل وقت</div>
+            <h1>خدمة تكييف احترافية...<br><em>في الوقت اللي تحتاجه</em></h1>
+            <p class="hero-lead">فنيون متخصصون، استجابة أسرع، وراحة بالك تبدأ من أول تواصل. كل ما يحتاجه تكييفك في مكان واحد.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#request" data-route="request">اطلب فني الآن <span>←</span></a>
+              <a class="button button-ghost" href="#join" data-route="join">انضم كفني <span>↗</span></a>
+            </div>
+            <div class="hero-trust"><div class="avatar-stack"><span>م</span><span>ع</span><span>س</span><span>+</span></div><div><strong>+2,500 عميل</strong><small>اختاروا NESORA هذا الشهر</small></div><div class="trust-divider"></div><div><strong class="stars">★★★★★</strong><small>4.9 / 5 تقييم العملاء</small></div></div>
+          </div>
+          <div class="hero-visual reveal delay-1">
+            <div class="hero-image-wrap"><img src="https://images.pexels.com/photos/38788452/pexels-photo-38788452.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="جهاز تكييف حائطي" /><div class="image-overlay"></div><div class="floating-card card-status"><span class="status-icon">✓</span><div><strong>تم إنجاز الخدمة</strong><small>منذ 8 دقائق · مدينة نصر</small></div></div></div>
+            <div class="hero-curve"></div>
+          </div>
+        </section>
+
+        <section class="stats-strip"><div><strong>+20</strong><span>سنة من الخبرة</span></div><div><strong>+2,500</strong><span>طلب تم إنجازه</span></div><div><strong>24/7</strong><span>دعم ومتابعة</span></div></section>
+
+        <section class="section-pad services-section" id="services"><div class="section-heading"><div><span class="section-kicker">كل ما يحتاجه تكييفك</span><h2>خدماتنا مصممة<br><em>لراحتك</em></h2></div><a href="#request" data-route="request" class="text-link">اكتشف كل الخدمات <span>←</span></a></div><div class="service-grid" id="serviceGrid"></div></section>
+
+        <section class="process-section" id="process"><div class="section-pad"><div class="section-heading light-heading"><div><span class="section-kicker">بكل بساطة</span><h2>كيف تعمل <em>NESORA؟</em></h2></div><p>من أول رسالة وحتى إتمام الخدمة، نتابع كل خطوة معك.</p></div><div class="steps"><div class="step active"><span>01</span><div><b>أرسل طلبك</b><small>حدد نوع الخدمة والموعد المناسب</small></div></div><div class="step"><span>02</span><div><b>نراجع طلبك</b><small>نختار لك الفني الأنسب لمنطقتك</small></div></div><div class="step"><span>03</span><div><b>تواصل مباشر</b><small>الفني يتواصل معك لتأكيد التفاصيل</small></div></div><div class="step"><span>04</span><div><b>تمت الخدمة</b><small>تابع حالة طلبك حتى النهاية</small></div></div></div></div></section>
+
+        <section class="section-pad why-section"><div class="why-visual"><img src="https://images.pexels.com/photos/7347538/pexels-photo-7347538.jpeg?auto=compress&cs=tinysrgb&w=900" alt="عامل يصلح جهاز تكييف" /><div class="experience-badge"><strong>20+</strong><span>عامًا من<br>الخبرة</span></div></div><div class="why-copy"><span class="section-kicker">لماذا NESORA؟</span><h2>لأن راحتك<br><em>تستاهل الأفضل</em></h2><p>نربطك بفنيين حقيقيين وموثوقين، ونضمن لك تجربة واضحة من أول طلب حتى آخر تفصيلة.</p><div class="benefit-grid"><div><span>✦</span><b>فنيون متخصصون</b><small>خبرة موثقة وتقييمات حقيقية</small></div><div><span>◷</span><b>استجابة سريعة</b><small>نصلك في الوقت المناسب</small></div><div><span>⌁</span><b>أسعار واضحة</b><small>لا مفاجآت في الفاتورة</small></div><div><span>✓</span><b>ضمان على الخدمة</b><small>نقف خلف كل ما نقدمه</small></div></div></div></section>
+
+        <section class="reviews-section" id="reviews"><div class="section-pad"><div class="section-heading"><div><span class="section-kicker">تجارب حقيقية</span><h2>ماذا يقول <em>عملاؤنا؟</em></h2></div><div class="carousel-controls"><button id="prevReview" aria-label="التقييم السابق">→</button><button id="nextReview" aria-label="التقييم التالي">←</button></div></div><div class="review-grid" id="reviewGrid"></div></div></section>
+
+        <section class="cta-band section-pad"><div><span class="section-kicker">جاهز للراحة؟</span><h2>خلي تكييفك علينا</h2><p>اطلب فني NESORA الآن، وخد أول خطوة نحو مكان أريح.</p></div><a href="#request" data-route="request" class="button button-primary">اطلب فني الآن <span>←</span></a></section>
+      </section>
+
+      <section class="page form-page" data-page="request" hidden><div class="page-intro"><span class="section-kicker">خدمة عند بابك</span><h1>اطلب فني الآن</h1><p>املأ بيانات بسيطة، وسنتواصل معك لتأكيد الموعد وتعيين الفني المناسب.</p></div><div class="form-layout"><form class="form-card" id="serviceForm"><div class="form-title"><span class="step-label">01 / بيانات الطلب</span><h2>احكِ لنا ما يحتاجه تكييفك</h2></div><div class="form-grid"><label>الاسم بالكامل<input name="name" required placeholder="اكتب اسمك" /></label><label>رقم الهاتف<input name="phone" required pattern="[0-9]{10,11}" placeholder="01xxxxxxxxx" inputmode="tel" /></label><label>المحافظة / المنطقة<input name="area" required placeholder="مثال: مدينة نصر، القاهرة" /></label><label>الموعد المناسب<input name="date" type="datetime-local" required /></label><label>نوع الخدمة<select name="service" required id="serviceSelect"></select></label><label>نوع التكييف<select name="acType" required><option value="سبليت">تكييف سبليت</option><option value="شباك">تكييف شباك</option><option value="مركزي">تكييف مركزي</option><option value="غير متأكد">غير متأكد</option></select></label><label class="full">العنوان بالتفصيل<input name="address" required placeholder="الشارع، رقم العقار، الدور والشقة" /></label><label class="full">وصف المشكلة<textarea name="description" required rows="4" placeholder="اكتب أي تفاصيل تساعد الفني على فهم المشكلة..."></textarea></label><label class="upload full"><span class="upload-icon">↑</span><span><b>صورة للتكييف أو العطل</b><small>اختياري · JPG أو PNG حتى 5MB</small></span><input type="file" name="photo" accept="image/png,image/jpeg" /></label></div><button class="button button-primary button-wide" type="submit"><span>إرسال الطلب</span><span>←</span></button><p class="form-note">بالإرسال، أنت توافق على سياسة الخصوصية وشروط الخدمة.</p></form><aside class="side-note"><span class="side-icon">✦</span><h3>نحن معك خطوة بخطوة</h3><p>سيتواصل معك فريقنا خلال دقائق لتأكيد البيانات وترشيح الفني المناسب.</p><a class="whatsapp-link" href="https://wa.me/201225775453" target="_blank">تواصل عبر WhatsApp <span>↗</span></a></aside></div></section>
+
+      <section class="page form-page" data-page="join" hidden><div class="page-intro"><span class="section-kicker">كن جزءًا من الفريق</span><h1>انضم إلى فريق NESORA</h1><p>حوّل خبرتك إلى فرص أكثر، وكن جزءًا من شبكة فنيين تحظى بثقة العملاء.</p></div><form class="form-card narrow-form" id="joinForm"><div class="form-title"><span class="step-label">01 / ملف الفني</span><h2>بياناتك المهنية</h2></div><div class="form-grid"><label>الاسم بالكامل<input name="name" required placeholder="اكتب اسمك بالكامل" /></label><label>رقم الهاتف<input name="phone" required pattern="[0-9]{10,11}" placeholder="01xxxxxxxxx" inputmode="tel" /></label><label>المحافظة والمنطقة<input name="area" required placeholder="مثال: الجيزة، الهرم" /></label><label>سنوات الخبرة<input name="years" type="number" min="0" max="60" required placeholder="مثال: 5" /></label><label>التخصص<select name="specialty" required><option value="تكييفات منزلية">تكييفات منزلية</option><option value="تكييفات مركزية">تكييفات مركزية</option><option value="تبريد تجاري">تبريد تجاري</option></select></label><label>الخدمات التي تقدمها<input name="services" required placeholder="صيانة، تركيب، شحن فريون..." /></label><label class="upload"><span class="upload-icon">↑</span><span><b>صورة شخصية</b><small>اختياري</small></span><input type="file" accept="image/png,image/jpeg" /></label><label class="upload"><span class="upload-icon">↑</span><span><b>شهادة أو إثبات خبرة</b><small>اختياري</small></span><input type="file" accept="image/png,image/jpeg,.pdf" /></label></div><button class="button button-primary button-wide" type="submit">إرسال طلب الانضمام <span>←</span></button></form></section>
+
+      <section class="page track-page" data-page="track" hidden><div class="page-intro"><span class="section-kicker">كل طلباتك في مكان واحد</span><h1>تتبع طلبك</h1><p>أدخل رقم الطلب ورقم الهاتف لمعرفة آخر تحديثات الخدمة.</p></div><form class="track-search" id="trackForm"><input name="orderId" required placeholder="رقم الطلب · مثال: NS-260909-4821" /><input name="phone" required placeholder="رقم الهاتف" inputmode="tel" /><button class="button button-dark" type="submit">تتبع الطلب <span>←</span></button></form><div id="trackResult"></div></section>
+
+      <section class="page admin-page" data-page="admin" hidden><div class="admin-header"><div><span class="section-kicker">مساحة الإدارة</span><h1>لوحة تحكم NESORA</h1></div><button class="button button-ghost" id="logoutBtn">تسجيل الخروج</button></div><div id="adminContent"></div></section>
+    </main>
+
+    <footer class="footer"><div class="footer-main"><div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark">N</span><span>NESORA</span></a><p>نخلي راحتك أسهل، بخدمة تكييف موثوقة تصل إليك في الوقت المناسب.</p><a href="https://wa.me/201225775453" target="_blank" class="footer-whatsapp">WhatsApp <span>↗</span></a></div><div><h4>استكشف</h4><a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#process">كيف نعمل</a><a href="#track" data-route="track">تتبع الطلب</a></div><div><h4>خدماتنا</h4><a href="#request" data-route="request">صيانة التكييفات</a><a href="#request" data-route="request">تركيب التكييفات</a><a href="#request" data-route="request">تنظيف التكييفات</a><a href="#request" data-route="request">كشف الأعطال</a></div><div><h4>تواصل معنا</h4><a href="tel:01225775453">012 2577 5453</a><a href="mailto:hello@nesora.co">hello@nesora.co</a><span>القاهرة، مصر</span><a href="#join" data-route="join">انضم كفني <span>↗</span></a></div></div><div class="footer-bottom"><span>© 2026 NESORA. جميع الحقوق محفوظة.</span><span>صنعناها لتكون راحتك أسهل.</span><a href="#admin" data-route="admin" class="admin-link">دخول الإدارة</a></div></footer>
+  </div>
+  <a class="floating-whatsapp" href="https://wa.me/201225775453" target="_blank" aria-label="تواصل عبر WhatsApp"><span>◔</span></a>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="loginModal" hidden><div class="login-modal"><button class="modal-close" id="closeLogin">×</button><span class="section-kicker">وصول آمن</span><h2>دخول الإدارة</h2><p>استخدم بيانات الإدارة للوصول إلى الطلبات والفنيين.</p><form id="loginForm"><label>البريد الإلكتروني<input type="email" name="email" value="admin@nesora.co" required /></label><label>كلمة المرور<input type="password" name="password" placeholder="••••••••" required /></label><button class="button button-primary button-wide">تسجيل الدخول</button><small>للتجربة: admin@nesora.co / nesora2026</small></form></div></div>
+  <script src="app.js"></script>
+</body>
 </html>
